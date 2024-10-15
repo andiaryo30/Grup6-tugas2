@@ -1,4 +1,4 @@
-<html lang="en" class="">
+<html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
@@ -23,7 +23,18 @@
       }
     </script>
   </head>
-  <body>
+  <body class="dark:bg-slate-800 dark:text-blue-200">
+    <div class="mb-10"></div>
+    <div class="flex justify-center">
+      <span class="text-sm text-slate-500 mr-2">Light</span>
+      <input type="checkbox" id="toogle" class="hidden">
+      <label for="toogle">
+        <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+          <div class="w-4 h-4 bg-white rounded-full toogle-circle"></div>
+        </div>
+      </label>
+      <span class="text-sm text-slate-500 ml-2">Dark</span>
+    </div>
     <div class="relative flex size-full min-h-screen flex-col bg-[#FFFFFF] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#F4EFE6] px-10 py-3">
@@ -157,21 +168,10 @@
                     </div>
                     <p class="text-[#1C160C] text-sm font-medium leading-normal">Setting Website</p>
                   </div>
-                  <div>
-                    <span class="text-sm text-slate-500 mr-2">Light</span>
-                    <input type="checkbox" id="toggle" class="hidden">
-                    <label for="toggle">
-                      <div class="w-10 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
-                        <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
-                      </div>
-                    </label>
-                    <span class="text-sm text-slate-500">Dark</span>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-          
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap gap-2 p-4">
               <a class="text-purple-400 text-base font-medium leading-normal" href="#">Home</a>
@@ -299,5 +299,14 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const checkbox = document.querySelector ('#toogle');
+      const html = document.querySelector ('html');
+
+      checkbox.addEventListener('click', function() {
+      checkbox.checked ? html.classList.add ('dark') : html.classList.remove('dark');
+    });
+    </script>
   </body>
 </html>
