@@ -1,4 +1,4 @@
-<html>
+<html lang="en" class="">
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
@@ -12,6 +12,16 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindCSS">
+      #toggle:checked ~ div.toggle-circle {
+        @apply translate-x-3;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#FFFFFF] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
@@ -28,15 +38,18 @@
             </div>
             <h2 class="text-[#1C160C] text-lg font-bold leading-tight tracking-[-0.015em]">Admin Page</h2>
           </div>
+
+
+
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex gap-2">
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-purple-400 hover:bg-purple-700  text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em] "
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-purple-400 hover:bg-purple-700  text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em] dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-800 dark:hover:bg-slate-100"
               >
                 <span class="truncate">Setting</span>
               </button>
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4  bg-purple-400 hover:bg-purple-700 text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4  bg-purple-400 hover:bg-purple-700 text-white text-sm font-bold leading-normal tracking-[0.015em] dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-800 dark:hover:bg-slate-100"
               >
                 <span class="truncate">Profile</span>
               </button>
@@ -144,26 +157,37 @@
                     </div>
                     <p class="text-[#1C160C] text-sm font-medium leading-normal">Setting Website</p>
                   </div>
+                  <div>
+                    <span class="text-sm text-slate-500 mr-2">Light</span>
+                    <input type="checkbox" id="toggle" class="hidden">
+                    <label for="toggle">
+                      <div class="w-10 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+                        <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+                      </div>
+                    </label>
+                    <span class="text-sm text-slate-500">Dark</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap gap-2 p-4">
               <a class="text-purple-400 text-base font-medium leading-normal" href="#">Home</a>
               <span class="text-black text-base font-medium leading-normal">/</span>
               <span class="text-[#1C160C] text-base font-medium leading-normal">Module Manager</span>
             </div>
-            <h2 class="text-[#1C160C] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Daftar Module</h2>
+            <h2 class="text-[#1C160C] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 ">Daftar Module</h2>
             <div class="flex justify-stretch">
               <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
                 <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-purple-400 text-[#FFFFFF] text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-purple-500"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-purple-400 text-[#FFFFFF] text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-purple-500 dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-800 dark:hover:bg-slate-100"
                 >
                   <span class="truncate">Tambah Module</span>
                 </button>
                 <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-purple-400 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-purple-500"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-purple-400 text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-purple-500 dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-800 dark:hover:bg-slate-100"
                 >
                   <span class="truncate">Daftar Module</span>
                 </button>
